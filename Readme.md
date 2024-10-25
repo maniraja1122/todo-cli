@@ -2,6 +2,25 @@
 
 Use this tool to add, list, manage and track your day-to-day priority tasks without leaving the CLI.
 
+#### Install
+
+##### For Mac Users
+
+Clone this repository, and in the main folder, run this command:
+
+```
+make all
+```
+
+##### For Other Users
+
+```
+make build
+make run
+```
+
+Make sure to move the `bin/todo` file to your device's `bin` folder.
+
 #### Format
 
 ```
