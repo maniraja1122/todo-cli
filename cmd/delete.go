@@ -1,9 +1,10 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
+	"strconv"
 	datastore "todo/pkg/datastore"
-	model "todo/pkg/model"
+
+	"github.com/spf13/cobra"
 )
 
 func init(){
@@ -13,4 +14,14 @@ func init(){
 var deleteCmd=&cobra.Command{
 	Use: "delete",
 	Short: "Delete a task",
+	Args: cobra.RangeArgs(1,1) ,
+	Run: func(cmd *cobra.Command, args []string){
+		id,err := strconv.Atoi(args[0])
+		if err!=nil{
+			panic(err)
+		}
+		if err:=datastore.DeleteTasks(id);err!=nil{
+			panic(err)
+		}
+	},
 }

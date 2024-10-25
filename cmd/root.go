@@ -11,9 +11,17 @@ var rootCmd = &cobra.Command{
 	Use : "todo",
 	Aliases: []string{"td"},
 	Short : "Your CLI Todo Tracker",
-	Long: "Use this tool to add, list, manage and track your day-to-day priority tasks without leaving the CLI.",
-	Run: func (cmd *cobra.Command,arg []string){
-	},
+	Long: `
+  _____ ___  ____   ___
+ |_   _/ _ \|  _ \ / _ \
+   | || | | | | | | | | |
+   | || |_| | |_| | |_| |
+   |_| \___/|____/ \___/
+   
+Use this tool to add, list, manage and track your day-to-day priority tasks without leaving the CLI.
+
+https://github.com/maniraja1122/todo-cli
+	`,
 }
 
 func Execute(){
