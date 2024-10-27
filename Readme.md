@@ -23,6 +23,30 @@ make run
 
 Make sure to move the `bin/todo` and `bin/td` [Optional] file to your device's `bin` folder.
 
+### Autocompletion
+
+Command:
+
+```
+todo completion
+```
+
+Use:
+
+```
+Generate the autocompletion script for todo for the specified shell.
+See each sub-command's help for details on how to use the generated script.
+
+Usage:
+  todo completion [command]
+
+Available Commands:
+  bash        Generate the autocompletion script for bash
+  fish        Generate the autocompletion script for fish
+  powershell  Generate the autocompletion script for powershell
+  zsh         Generate the autocompletion script for zsh
+```
+
 ### Format
 
 ```
