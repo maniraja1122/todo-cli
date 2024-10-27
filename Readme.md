@@ -1,10 +1,10 @@
-### TODO CLI Written in [Cobra](https://github.com/spf13/cobra)
+## TODO CLI Written in [Cobra](https://github.com/spf13/cobra)
 
 Use this tool to add, list, manage and track your day-to-day priority tasks without leaving the CLI.
 
-#### Install
+### Install
 
-##### For Mac Users
+#### For Mac Users
 
 Clone this repository, and in the main folder, run this command:
 
@@ -14,7 +14,7 @@ make all
 
 It will prompt you to enter your password as `make` executes `sudo` to move the binary file to your device's `bin` folder.
 
-##### For Other Users
+#### For Other Users
 
 ```
 make build
@@ -23,7 +23,7 @@ make run
 
 Make sure to move the `bin/todo` and `bin/td` [Optional] file to your device's `bin` folder.
 
-#### Format
+### Format
 
 ```
 todo [COMMAND] [ARG] [--FLAG]
@@ -35,9 +35,9 @@ or using Alias
 td [COMMAND] [ARG] [--FLAG]
 ```
 
-#### Commands
+### Commands
 
-##### TODO
+#### TODO
 
 Command:
 
@@ -81,7 +81,7 @@ Flags:
 Use "todo [command] --help" for more information about a command.
 ```
 
-##### Add
+#### Add
 
 Command:
 
@@ -115,7 +115,7 @@ Workout on bicep with side focus on abs.
 New Task Added
 ```
 
-##### List
+#### List
 
 Command:
 
@@ -143,7 +143,7 @@ ID     Task
 6     Work on the k8s setup
 ```
 
-##### Edit
+#### Edit
 
 Command:
 
@@ -164,7 +164,7 @@ Status should a [String] in List (Not Started,In Progress,Completed) or Short Ha
 ns
 ```
 
-##### Mark
+#### Mark
 
 Command:
 
@@ -180,7 +180,7 @@ todo mark 6 -s ip
 
 This command marks task with id `6` in state `In Progress`.
 
-##### Delete
+#### Delete
 
 Sample Command:
 
@@ -194,7 +194,7 @@ Sample Output:
 Task Deleted Successfully
 ```
 
-##### Show
+#### Show
 
 Normal `todo list` shows `ID` and `Title` of all tasks. `todo show` prints more details about a task.
 
@@ -212,7 +212,15 @@ Description : Workout on bicep with side focus on abs.
 Status : Not Started
 ```
 
-#### Data Format Details
+#### Clear
+
+Command:
+
+```
+todo clear -s <STATUS>
+```
+
+### Data Format Details
 
 - ID `[INT]`
 - Title `[String]`

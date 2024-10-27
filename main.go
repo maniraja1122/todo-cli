@@ -12,4 +12,5 @@ func init(){
 
 func main(){
 	cmd.Execute()
+	defer datastore.DB.Close()
 }

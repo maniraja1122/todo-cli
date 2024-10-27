@@ -20,6 +20,7 @@ func ListAllTasks() error{
 	if err!=nil{
 		return err
 	}
+	defer rows.Close()
 	for rows.Next(){
 		task:=model.Task{}
 		if err:=rows.Scan(&task.ID,&task.Title,&task.Description,&task.Status); err!=nil{
@@ -36,6 +37,7 @@ func ListTaskbyStatus(status string) error{
 	if err!=nil{
 		return err
 	}
+	defer rows.Close()
 	for rows.Next(){
 		task:=model.Task{}
 		if err:=rows.Scan(&task.ID,&task.Title,&task.Description,&task.Status); err!=nil{
@@ -48,6 +50,24 @@ func ListTaskbyStatus(status string) error{
 
 func DeleteTasks(id int) error{
 	_,err:=DB.Exec("DELETE FROM tasks WHERE id=?",id)
+	if err!=nil{
+		return err
+	}
+	println("Task Deleted Successfully")
+	return nil
+}
+
+func DeleteTasksByStatus(status string) error{
+	_,err:=DB.Exec("DELETE FROM tasks WHERE status=?",status)
+	if err!=nil{
+		return err
+	}
+	println("Tasks Deleted Successfully")
+	return nil
+}
+
+func DeleteAllTasks() error{
+	_,err:=DB.Exec("DELETE FROM tasks")
 	if err!=nil{
 		return err
 	}
@@ -76,6 +96,7 @@ func ShowTask(id int) error{
 	if err!=nil{
 		return err
 	}
+	defer rows.Close()
 	for rows.Next(){
 		task:=model.Task{}
 		if err:=rows.Scan(&task.ID,&task.Title,&task.Description,&task.Status);err!=nil{
@@ -94,6 +115,7 @@ func GetTask(id int) (task *model.Task,err error){
 		return nil,err
 	}
 	task=new(model.Task)
+	defer rows.Close()
 	if rows.Next(){
 		if err:=rows.Scan(&task.ID,&task.Title,&task.Description,&task.Status);err!=nil{
 			return nil,err
