@@ -3,14 +3,16 @@ all: build run install clean
 build: main.go
 	go build main.go
 	mkdir -p bin
-	mv -f main bin/todo
-	echo "Built Successful, Make sure to move the bin/todo file to your device's bin folder"
+	cp -f main bin/todo
+	mv -f main bin/td
+	echo "Built Successful, Make sure to move the bin/todo and bin/td file to your device's bin folder"
 
 run:
 	./bin/todo
 
 install:
 	sudo mv -f bin/todo /usr/local/bin
+	sudo mv -f bin/td /usr/local/bin
 
 clean:
 	rm -rf bin
